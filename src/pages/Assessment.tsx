@@ -911,7 +911,7 @@ export default function Assessment() {
         {/* Background image with heavy overlay */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url(/rooftop-finale.jpg)' }}
+          style={{ backgroundImage: 'url(./rooftop-finale.jpg)' }}
         />
         <div
           className="absolute inset-0"

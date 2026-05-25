@@ -170,7 +170,7 @@ function RansomDemandContent() {
       />
       <div className="mb-2">
         <img
-          src="/ransom-letter-scan.jpg"
+          src="./ransom-letter-scan.jpg"
           alt="Ransom letter scan"
           className="mb-4 h-auto w-full max-w-md rounded-sm border border-grid-blue object-cover opacity-80"
         />
@@ -445,7 +445,7 @@ function ICACInterrogationContent() {
 
       <div className="mb-4">
         <img
-          src="/interrogation-room.jpg"
+          src="./interrogation-room.jpg"
           alt="ICAC interrogation room"
           className="mb-4 h-auto w-full max-w-lg rounded-sm border border-grid-blue object-cover opacity-70"
         />

@@ -113,7 +113,7 @@ function TerminalBootSequence() {
       <div
         className="pointer-events-none absolute inset-0 z-0 opacity-20"
         style={{
-          backgroundImage: 'url(/hero-terminal-bg.jpg)',
+          backgroundImage: 'url(./hero-terminal-bg.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -241,6 +241,7 @@ function OperativeLetter() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const letterRef = useRef<HTMLDivElement>(null);
   const [letterText, setLetterText] = useState('');
+  const [_typingDone, setTypingDone] = useState(false);
 
   const fullLetter = `長官鈞鑒：
 
@@ -258,18 +259,30 @@ function OperativeLetter() {
   useGSAP(() => {
     if (!sectionRef.current || !letterRef.current) return;
 
-    // Scroll-driven typing effect
+    // Typewriter effect triggered once when section enters viewport
+    let currentIndex = 0;
+    let intervalId: ReturnType<typeof setInterval>;
+
     ScrollTrigger.create({
       trigger: sectionRef.current,
       start: 'top 80%',
-      end: 'bottom 20%',
-      scrub: true,
-      onUpdate: (self) => {
-        const progress = self.progress;
-        const charCount = Math.floor(progress * fullLetter.length);
-        setLetterText(fullLetter.slice(0, charCount));
+      once: true,
+      onEnter: () => {
+        intervalId = setInterval(() => {
+          currentIndex++;
+          if (currentIndex <= fullLetter.length) {
+            setLetterText(fullLetter.slice(0, currentIndex));
+          } else {
+            clearInterval(intervalId);
+            setTypingDone(true);
+          }
+        }, 30); // 30ms per character
       },
     });
+
+    return () => {
+      if (intervalId) clearInterval(intervalId);
+    };
   }, { scope: sectionRef });
 
   return (
@@ -392,7 +405,7 @@ function OperativeLetter() {
             {/* Operator silhouette */}
             <div className="mt-8 flex justify-center">
               <img
-                src="/operator-silhouette.png"
+                src="./operator-silhouette.png"
                 alt="[ OPERATIVE PRESENCE ]"
                 className="h-48 w-auto opacity-60"
                 style={{ filter: 'drop-shadow(0 0 16px rgba(56, 189, 248, 0.2))' }}
@@ -508,7 +521,7 @@ function IncidentOverview() {
       <div
         className="pointer-events-none absolute inset-0 z-0"
         style={{
-          backgroundImage: 'url(/hk-skyline-night.jpg)',
+          backgroundImage: 'url(./hk-skyline-night.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',

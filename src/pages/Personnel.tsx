@@ -42,7 +42,7 @@ const CHARACTERS: Character[] = [
     threatLevel: 'LOW',
     status: 'ally',
     fileRef: 'CW-DOS-001',
-    photo: '/dossier-liu.jpg',
+    photo: './dossier-liu.jpg',
     summary: [
       'Civilian administration background. Cool-headed, meticulous, strategic thinker. Liu believes in winning through intelligence rather than force. He insists on procedural justice and refuses to sacrifice the rule of law even in the most desperate moments.',
       "Liu saw through Lee Man-bun's compromised judgment \u2014 a father unable to think objectively about an operation involving his own son. He led the impeachment and seized command of Operation Cold War.",
@@ -71,7 +71,7 @@ const CHARACTERS: Character[] = [
     threatLevel: 'MEDIUM',
     status: 'target',
     fileRef: 'CW-DOS-002',
-    photo: '/dossier-li.jpg',
+    photo: './dossier-li.jpg',
     summary: [
       "Hawkish operations officer. 30 years of police service. Charismatic, forceful, with a soldier's bearing. Lee has spent his entire career in uniform \u2014 he believes in action, in command, in the chain of authority.",
       'When his son disappeared, Lee\'s judgment became clouded. He declared himself Acting Commissioner, launched Operation Cold War, and demanded absolute control. His philosophy: "Extraordinary times call for extraordinary measures."',
@@ -102,7 +102,7 @@ const CHARACTERS: Character[] = [
     threatLevel: 'HIGH',
     status: 'enemy',
     fileRef: 'CW-DOS-003',
-    photo: '/dossier-karjun.jpg',
+    photo: './dossier-karjun.jpg',
     specialStamp: 'SUSPECT',
     summary: [
       'IQ 192. A genius by any standard. Lee Ka-chun is Lee Man-bun\'s only son \u2014 a fact that made him the perfect weapon against the police hierarchy.',
@@ -186,7 +186,7 @@ const CHARACTERS: Character[] = [
     threatLevel: 'HIGH',
     status: 'enemy',
     fileRef: 'CW-DOS-006',
-    photo: '/dossier-michael.jpg',
+    photo: './dossier-michael.jpg',
     specialStamp: 'PERSON OF INTEREST',
     summary: [
       'SDU Commander. Elite tactical officer. Professional killer.',
